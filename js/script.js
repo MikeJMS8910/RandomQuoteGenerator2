@@ -18,31 +18,31 @@ const quotes = [ //Object for all of the quotes
   {
     quote: "You miss 100% of the shots you don not take.",
     source: "Wayne Gretzky",
-    citation: "",
+    citation: "n/a",
     year: "1983"
   },
   {
     quote: "Whether you think you can or you think you cant, youre right.",
     source: "Henry Ford",
-    citation: "",
-    year: ""
+    citation: "n/a",
+    year: "n/a"
   },
   {
     quote: "The only person you are destined to become is the person you decide to be.",
     source: "Ralph Waldo Emerson",
-    citation: "",
+    citation: "n/a",
     year: "1991"
   },
   {
     quote: "An unexamined life is not worth living.",
     source: "Socrates",
-    citation: "",
-    year: ""
+    citation: "n/a",
+    year: "n/a"
   },
   {
     quote: "Dream big and dare to fail.",
     source: "Norman Vaughan",
-    citation: "",
+    citation: "n/a",
     year: "1930"
   }
 ];
@@ -51,14 +51,14 @@ let currentQuote = 0  //Shows the quote that is currently in use
 let newQuote = null  //Will show the quote that was randomly picked
 let x = true //For the while loop
 
-function getRandomQuote(quoteSection) {
+function getRandomQuote() {
   while(x == true) {
     newQuote = Math.floor(Math.random() * 4);  //Picks a random number from 0 - 4
     if(newQuote == currentQuote) {  //Makes sure that the quote that was picked is not already on
       x = true
     } else {
       currentQuote = newQuote
-      return quotes[newQuote][quoteSection]
+      return quotes[newQuote]
       break
     }
   }
@@ -66,10 +66,11 @@ function getRandomQuote(quoteSection) {
 
 
 function printQuote() {
-  quote.innerHTML = getRandomQuote("quote")
-  citation.innerHTML = getRandomQuote("citation")
-  year.innerHTML = getRandomQuote("year")
-  source.innerHTML = getRandomQuote("source")
+  currentQuote = getRandomQuote()
+  quote.innerHTML = currentQuote["quote"]
+  citation.innerHTML = currentQuote["citation"]
+  year.innerHTML = currentQuote["year"]
+  source.innerHTML = currentQuote["source"]
 }
 
 

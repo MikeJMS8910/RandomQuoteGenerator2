@@ -18,32 +18,32 @@ const quotes = [ //Object for all of the quotes
   {
     quote: "You miss 100% of the shots you don not take.",
     source: "Wayne Gretzky",
-    citation: "n/a",
-    year: "1983"
+    citation: "",
+    year: ", 1983"
   },
   {
     quote: "Whether you think you can or you think you cant, youre right.",
     source: "Henry Ford",
-    citation: "n/a",
-    year: "n/a"
+    citation: "",
+    year: ""
   },
   {
     quote: "The only person you are destined to become is the person you decide to be.",
     source: "Ralph Waldo Emerson",
-    citation: "n/a",
-    year: "1991"
+    citation: "",
+    year: ", 1991"
   },
   {
     quote: "An unexamined life is not worth living.",
     source: "Socrates",
-    citation: "n/a",
-    year: "n/a"
+    citation: "",
+    year: ""
   },
   {
     quote: "Dream big and dare to fail.",
     source: "Norman Vaughan",
-    citation: "n/a",
-    year: "1930"
+    citation: "",
+    year: ", 1930"
   }
 ];
 
@@ -66,11 +66,14 @@ function getRandomQuote() {
 
 
 function printQuote() {
-  currentQuote = getRandomQuote()
-  quote.innerHTML = currentQuote["quote"]
-  citation.innerHTML = currentQuote["citation"]
-  year.innerHTML = currentQuote["year"]
-  source.innerHTML = currentQuote["source"]
+  let currentQuote = getRandomQuote()
+  let displayQuote = `<p class="quote">${currentQuote['quote']}</p>
+                      <p class="source">${currentQuote['source']}
+                      <span class="citation">${currentQuote['citation']}</span>
+                      <span class="year">${currentQuote['year']}</span>
+                      </p>`;
+
+  document.getElementById('quote-box').innerHTML = displayQuote;
 }
 
 

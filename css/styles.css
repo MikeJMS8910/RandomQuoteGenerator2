@@ -111,7 +111,7 @@ h1 {
 }
 
 .year:before {
-  content: ", ";
+  content: "";
   font-style: normal;
 }
 
